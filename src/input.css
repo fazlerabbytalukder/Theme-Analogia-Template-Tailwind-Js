@@ -126,13 +126,18 @@ a:hover {
 } */
 
 .mega-menu{
-    background: #8212fa17;
+    background: #EAE0F5;
     border: 1px solid rgba(128, 128, 128, 0.30);
     display: none;
 }
 
 .mega-menu.dropdown-active{
     display: block;
+}
+
+.mega-menu-item:hover{
+    border-radius: 5px;
+    background: rgba(129, 18, 250, 0.10);
 }
 
 /* Style for dropdown */
