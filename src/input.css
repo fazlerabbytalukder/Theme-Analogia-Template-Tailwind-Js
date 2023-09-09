@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.ccon {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.ccon-p {
+    @apply m-auto px-[15px] sm:px-[25px] md:px-[38] lg:px-[38] xl:px-[38] 2xl:px-[38];
+}
+
+/* navbar design */
+.nav-logo img{
+    @apply h-[35px] lg:h-[53px] w-[103px] lg:w-[156px]
+}
+
+.nav,
+.nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    margin: 0;
+}
+
+.nav {
+    justify-content: space-between;
+    height: 60px;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.nav .nav-links {
+    column-gap: 20px;
+    list-style: none;
+}
+
+.nav .nav-links a {
+    transition: all 0.2s linear;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.nav-social-icon {
+    color: var(--main-color);
+}
+
+.nav-social-icon:hover {
+    color: var(--secondary-color);
+}
+
+.nav.openSearch .nav-links a {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #8112FA;
+    cursor: pointer;
+}
+
+.shadow-bg {
+    background-color: #000;
+    opacity: 60%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 10;
+    margin-top: 60px;
+}
+
+.nav.openNav .navOpenBtn .bar:first-child {
+    -webkit-transform: rotate(-45deg) translate(-4px, 0px);
+    transform: rotate(-45deg) translate(-4px, 0px);
+}
+
+.nav.openNav .navOpenBtn .bar:nth-child(2) {
+    display: none;
+}
+
+.nav.openNav .navOpenBtn .bar:last-child {
+    -webkit-transform: rotate(45deg) translate(-6px, -2px);
+    transform: rotate(45deg) translate(-6px, -2px);
+}
+
+/* .mega-menu{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+} */
+
+.mega-menu{
+    background: #8212fa17;
+    border: 1px solid rgba(128, 128, 128, 0.30);
+    display: none;
+}
+
+.mega-menu.dropdown-active{
+    display: block;
+}
+
+/* Style for dropdown */
+
+
+/* responsive */
+
+@media screen and (max-width: 767px) {
+    .nav .navOpenBtn,
+    .nav .navCloseBtn {
+        display: block;
+    }
+
+    a {
+        color: white;
+    }
+
+    .nav .nav-links {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        height: 100%;
+        max-width: 280px;
+        width: 100%;
+        padding-top: 50px;
+        padding-left: 0;
+        row-gap: 15px;
+        flex-direction: column;
+        background-color: #8112FA;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        z-index: 100;
+        align-items: start;
+        padding-left: 25px;
+    }
+
+    .nav.openNav .nav-links {
+        left: 0;
+    }
+
+    .nav .navOpenBtn {
+        color: var(--main-color);
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .nav .navCloseBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .mega-menu{
+        background: #0F152B;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 370px){
+    .logo-container{
+        display: none;
+    }
+}
+
+/* common design */
+.common-btn-1{
+    @apply px-[12px] lg:px-[24px] py-[6px] lg:py-[12px] bg-primary rounded-[5px] lg:rounded-[10px] text-sm lg:text-lg font-normal lg:font-medium whitespace-nowrap text-white
+}
+
+.sign-in-btn{
+    @apply px-[12px] lg:px-[24px] py-[6px] lg:py-[12px] bg-transparent rounded-[5px] lg:rounded-[10px] text-sm lg:text-lg font-normal lg:font-medium whitespace-nowrap text-text-color
+}
